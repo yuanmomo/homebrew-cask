@@ -11,7 +11,7 @@ log(){
 loop_parser(){
     while true
     do
-        result=$(curl -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest | grep "$1" | cut -d '"' -f 4)
+        result=$(curl -H "Authorization: ${GH_TOKEN}" -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest | grep "$1" | cut -d '"' -f 4)
         if [ ! -z "$result" ]; then
             echo $result
             break
@@ -20,10 +20,6 @@ loop_parser(){
 }
 
 log 'parser remix download url'
-
-test=$(curl -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest)
-
-log "$test"
 
 DOWNLOAD_URL=$( loop_parser 'browser_download_url.*Remix-IDE.*mac\.zip"$' )
 
