@@ -6,7 +6,7 @@ cask 'remix' do
   version "1.0.4"
   sha256 "467ef5fd07ec69dc635bf3ae34643c4cc2a5b784c4b2a467d198cd65b1a866e0"
 
-  desc "Remix IDE desktop APP."
+  name "Remix IDE desktop."
   homepage "https://github.com/ethereum/remix-desktop"
   url "https://github.com/ethereum/remix-desktop/releases/download/v1.0.4/Remix-IDE-1.0.4-mac.zip"
 

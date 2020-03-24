@@ -1,28 +1,28 @@
 ### homebrew remix  [![Build Status](https://travis-ci.org/remix/homebrew-remix.svg?branch=master)](https://travis-ci.org/remix/homebrew-remix)
 
 
-The homebrew tap for remix-core.
+The homebrew tap for Remix IDE desktop.
 
 
 ------
 
 
-### Install remix-core
+### Install remix
 
 
 step 1: Add official tap
 
 ```bash
-brew tap remix/remix
+brew tap yuanmomo/cask
 ```
 
-step 2: Install remix-core:
+step 2: Install Remix IDE desktop:
 
 ```bash
-brew install remix-core
+brew cask install remix
 ```
 
-### Update remix-core
+### Update remix
 
 step 1: update tap
 
@@ -30,54 +30,27 @@ step 1: update tap
 brew update
 ```
 
-step 2: update remix-core
+step 2: update remix
 
 ```bash
-brew upgrade remix-core
+brew cask upgrade remix
 ```
 
 ------
 
-### Uninstall remix-core
+### Uninstall remix
 
-step 1: uninstall core
+step 1: uninstall remix
 
 ```bash
-brew uninstall remix-core
+brew cask uninstall remix
 ```
 
 step 2: untap official formula
 
 ```bash
-brew untap remix/remix
+brew untap yuanmomo/cask
 ```
 
 ------
-
-### Usage
-
-once you installed, you can run command via `remix` to run remix-core.
-
-The defualt config file location is:`/usr/local/etc/remix/config.json`
-
-step 1: edit the default config:
-
-```bash
-vim /usr/local/etc/remix/config.json
-```
-
-step 2: run remix-core without starting at login.
-
-```bash
-brew services run remix-core
-```
-
-or run remix-core and register it to launch at login via:
-
-```bash
-brew services start remix-core
-```
-
-
-
 
