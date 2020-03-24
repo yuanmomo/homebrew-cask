@@ -21,6 +21,10 @@ loop_parser(){
 
 log 'parser remix download url'
 
+test=$(curl -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest)
+
+log "$test"
+
 DOWNLOAD_URL=$( loop_parser 'browser_download_url.*Remix-IDE.*mac\.zip"$' )
 
 if [ -z "$DOWNLOAD_URL" ]; then
