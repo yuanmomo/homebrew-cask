@@ -21,7 +21,9 @@ loop_parser(){
 
 if [[ "$DEBUG_DOWNLOAD"x = "true"x ]] ; then
   echo "debug DEBUG_DOWNLOAD .... "
+  curl -s https://api.github.com/rate_limit
   curl -H "Authorization: ${GH_TOKEN}" -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest
+  exit 1
 fi
 
 log 'parser remix download url'
