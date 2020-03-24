@@ -19,6 +19,11 @@ loop_parser(){
     done
 }
 
+if [[ "$DEBUG_DOWNLOAD"x = "true"x ]] ; then
+  echo "debug DEBUG_DOWNLOAD .... "
+  curl -H "Authorization: ${GH_TOKEN}" -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest
+fi
+
 log 'parser remix download url'
 
 DOWNLOAD_URL=$( loop_parser 'browser_download_url.*Remix-IDE.*mac\.zip"$' )
