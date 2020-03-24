@@ -11,7 +11,7 @@ log(){
 loop_parser(){
     while true
     do
-        result=$(curl -H "Authorization: ${GH_TOKEN}" -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest | grep "$1" | cut -d '"' -f 4)
+        result=$(curl -H "Authorization: token ${GH_TOKEN}" -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest | grep "$1" | cut -d '"' -f 4)
         if [ ! -z "$result" ]; then
             echo $result
             break
@@ -22,7 +22,7 @@ loop_parser(){
 if [[ "$DEBUG_DOWNLOAD"x = "true"x ]] ; then
   echo "debug DEBUG_DOWNLOAD .... "
   curl -s https://api.github.com/rate_limit
-  curl -H "Authorization: ${GH_TOKEN}" -s https://api.github.com/repos/ethereum/remix-desktop/releases/latest
+  curl -s -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/ethereum/remix-desktop/releases/latest
   exit 1
 fi
 
@@ -31,10 +31,10 @@ log 'parser remix download url'
 DOWNLOAD_URL=$( loop_parser 'browser_download_url.*Remix-IDE.*mac\.zip"$' )
 
 if [ -z "$DOWNLOAD_URL" ]; then
-    
+
     log 'parser download url error, skip update.'
     exit 0
-    
+
 fi
 
 log "download url: $DOWNLOAD_URL  start downloading..."
@@ -54,10 +54,10 @@ V_VERSION=$( loop_parser "tag_name" )
 V_VERSION=$(echo ${V_VERSION:1})
 
 if [ -z "$V_VERSION" ]; then
-    
+
     log 'parser file version error, skip update.'
     exit 0
-    
+
 fi
 
 
