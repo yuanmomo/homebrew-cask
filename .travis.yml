@@ -9,4 +9,4 @@ before_install:
 
 script:
   - chmod +x shell/checker-remix.sh
-  - ./shell/checker-remix.sh
+  - bash -vx ./shell/checker-remix.sh
