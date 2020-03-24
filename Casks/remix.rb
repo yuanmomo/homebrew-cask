@@ -4,11 +4,11 @@
 
 cask 'remix' do
   version "1.0.4"
-  sha256 "467ef5fd07ec69dc635bf3ae34643c4cc2a5b784c4b2a467d198cd65b1a866e0"
+  sha256 "c5481e29e8f6e346727ea9b7aaf4f36e4d3a457972abe014ee439c5656fb2f53"
 
   name "Remix IDE desktop."
   homepage "https://github.com/ethereum/remix-desktop"
-  url "https://github.com/ethereum/remix-desktop/releases/download/v1.0.4/Remix-IDE-1.0.4-mac.dmg"
+  url "https://github.com/ethereum/remix-desktop/releases/download/v1.0.4/Remix-IDE-1.0.4-mac.zip"
 
   # depends_on "cmake" => :build
 
