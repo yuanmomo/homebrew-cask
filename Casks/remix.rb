@@ -8,7 +8,7 @@ cask 'remix' do
 
   name "Remix IDE desktop."
   homepage "https://github.com/ethereum/remix-desktop"
-  url "https://github.com/ethereum/remix-desktop/releases/download/v1.0.4/Remix-IDE-1.0.4-mac.zip"
+  url "https://github.com/ethereum/remix-desktop/releases/download/v1.0.4/Remix-IDE-1.0.4-mac.dmg"
 
   # depends_on "cmake" => :build
 

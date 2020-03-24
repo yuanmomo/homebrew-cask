@@ -21,7 +21,7 @@ loop_parser(){
 
 log 'parser remix download url'
 
-DOWNLOAD_URL=$( loop_parser 'browser_download_url.*Remix-IDE.*mac.zip"$' )
+DOWNLOAD_URL=$( loop_parser 'browser_download_url.*Remix-IDE.*mac.dmg"$' )
 
 if [ -z "$DOWNLOAD_URL" ]; then
     
@@ -32,14 +32,14 @@ fi
 
 log "download url: $DOWNLOAD_URL  start downloading..."
 
-curl -s -L $DOWNLOAD_URL > Remix-IDE-mac.zip || { log 'file download failed!' ; exit 1; }
+curl -s -L $DOWNLOAD_URL > Remix-IDE-mac.dmg || { log 'file download failed!' ; exit 1; }
 
-if [ ! -e Remix-IDE-1.0.4-mac.zip ]; then
+if [ ! -e Remix-IDE-mac.dmg ]; then
     log "file download failed!"
     exit 1
 fi
 
-V_HASH256=$(sha256sum Remix-IDE-1.0.4-mac.zip |cut  -d ' ' -f 1)
+V_HASH256=$(sha256sum Remix-IDE-mac.dmg |cut  -d ' ' -f 1)
 
 log "file hash: $V_HASH256 parser Remix IDE version..."
 
